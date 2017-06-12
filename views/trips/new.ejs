@@ -1,0 +1,42 @@
+<div>
+  <h1>Edit</h1>
+
+  <form method="POST" action="/trips">
+    <div class="field">
+      <label class="label" for="latitude">Latitude</label>
+      <p class="control">
+        <input class="input" type="text" name="latitude" id="latitude" value="">
+      </p>
+    <div class="field">
+      <label class="label" for="title">Longitude</label>
+      <p class="control">
+        <input class="input" type="text" name="longitude" id="longitude" value="">
+      </p>
+    <div class="field">
+      <label class="label" for="title">Title</label>
+      <p class="control">
+        <input class="input" type="text" name="title" id="title" value="">
+      </p>
+    </div>
+    <div class="field">
+      <label class="label" for="image">Image</label>
+      <label class="button is-primary" for="image">Choose file</label>
+      <input type="file" name="image" id="image" hidden>
+    </div>
+    <div>
+      <label class="label" for="fallType">Fall Type</label>
+      <label>
+          Trip <input type="radio" checked name="fallType" value="trip">
+          Slip <input type="radio" name="fallType" value="slip">
+          Stumble <input type="radio" name="fallType" value="stumble">
+          Tumble <input type="radio" name="fallType" value="tumble">
+          Fall <input type="radio" name="fallType" value="fall">
+      </label>
+    <div class="field">
+      <label class="label"for="desription">Tell us about your trip</label>
+      <textarea class="input" type="text" name="description" id="description"></textarea>
+    </div>
+    <button class="button">Post</button>
+  </form>
+  <hr/>
+</div>

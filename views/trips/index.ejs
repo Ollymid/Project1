@@ -1,0 +1,18 @@
+<p>trips index</p>
+
+<div >
+  <h1 >Hazard Map</h1>
+  <div>
+    <% trips.forEach((trip) => { %>
+      <div>
+        <div >
+          <p><%= trip.title %></p>
+          <p><%= trip.description %></p>
+          <a href="/trips/<%= trip.id %>">Show</a>
+
+          <a href="/users/<%= trip.createdBy.id %>"><p>Created by: <%= trip.createdBy.username %> </p></a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>

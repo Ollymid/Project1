@@ -1,0 +1,55 @@
+<div >
+  <h1 >Show Post</h1>
+  <div class="column is-6 is-offset-3">
+
+        <p><em><%= trip.title %></em></p>
+        <div class="block">
+          <p>Created by: <%= trip.createdBy.username %> </p>
+          <div class="button-bar">
+          <% if(locals.isAuthenticated && trip.belongsTo(currentUser)) { %>
+              <a class="button is-primary" href="/trips/<%= trip.id %>/edit">Edit</a>
+              <form class="alongside" method="POST" action="/trips/<%= trip.id %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button>Delete</button>
+              </form>
+            </div>
+          <% } %>
+
+        </div>
+
+    <% if(locals.isAuthenticated) { %>
+      <section >
+          <form method="POST" action="/trips/<%= trip.id %>/comments">
+            <div >
+                <div class="field">
+                  <label class="label" for="content">Comment</label>
+                  <p class="control">
+                      <textarea class="textarea" name="content" id="content" placeholder="Textarea"></textarea>
+                  </p>
+                  </div>
+                  <button>Post</button>
+            </div>
+          </form>
+      </section>
+    <% } %>
+    <section>
+       <h4>Comments</h4>
+       <% trip.comments.forEach((comment) => { %>
+         <div>
+              <p>
+                <a href="/profile"><%= comment.createdBy.username %></a>
+                <%= comment.content %>
+              </p>
+
+                  <% if(locals.isAuthenticated && comment.belongsTo(currentUser)) { %>
+                    <form method="POST" action="/trips/<%= trip.id %>/comments/<%= comment.id %>">
+                     <input type="hidden" name="_method" value="DELETE">
+                    <button></button>
+                    </form>
+                 <% } %>
+         </div>
+       <% }) %>
+     </section>
+
+  </div>
+</div>

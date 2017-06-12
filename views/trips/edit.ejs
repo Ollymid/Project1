@@ -1,0 +1,47 @@
+<p>trips edit</p>
+<h1>Edit Post</h1>
+
+<div>
+  <h1>Edit</h1>
+
+  <form method="POST" action="/trips/<%= trip.id %>">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="field">
+      <label class="label" for="latitude">Latitude</label>
+      <p class="control">
+        <input class="input" type="text" name="latitude" id="latitude" value="<%= trip.latitude %>">
+      </p>
+    <div class="field">
+      <label class="label" for="title">Longitude</label>
+      <p class="control">
+        <input class="input" type="text" name="longitude" id="longitude" value="<%= trip.longitude %>">
+      </p>
+    <div class="field">
+      <label class="label" for="title">Title</label>
+      <p class="control">
+        <input class="input" type="text" name="title" id="title" value="<%= trip.title %>">
+      </p>
+    </div>
+    <div class="field">
+      <label class="label" for="image">Image</label>
+      <label class="button is-primary" for="image">Choose file</label>
+      <input type="file" name="image" id="image" hidden>
+    </div>
+    <div>
+      <label class="label" for="fallType">Fall Type</label>
+      <%= trip.fallType %>
+      <label>
+          Trip <input type="radio" name="fallType" value="trip" <% if(trip.fallType === 'trip') { %>checked="checked"<% } %>>
+          Slip <input type="radio" name="fallType" value="slip" <% if(trip.fallType === 'slip') { %>checked="checked"<% } %>>
+          Stumble <input type="radio" name="fallType" value="stumble" <% if(trip.fallType === 'stumble') { %>checked="checked"<% } %>>
+          Tumble <input type="radio" name="fallType" value="tumble" <% if(trip.fallType === 'tumble') { %>checked="checked"<% } %>>
+          Fall <input type="radio" name="fallType" value="fall" <% if(trip.fallType === 'fall') { %>checked="checked"<% } %>>
+      </label>
+    <div class="field">
+      <label class="label"for="desription">Tell us about your trip</label>
+      <textarea class="input" type="text" name="description" id="description"><%= trip.description %></textarea>
+    </div>
+    <button class="button">Post</button>
+  </form>
+  <hr/>
+</div>
