@@ -1,1 +1,10 @@
 <p>500 error - I made a mistake</p>
+
+<h2><%= err.message %></h2>
+
+<% if(locals.err.stack) { %>
+<pre>
+  <%= err.stack %>
+</pre>
+<% } %>
+</main>

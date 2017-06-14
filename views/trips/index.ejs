@@ -1,18 +1,7 @@
-<p>trips index</p>
-
-<div >
-  <h1 >Hazard Map</h1>
-  <div>
-    <% trips.forEach((trip) => { %>
-      <div>
-        <div >
-          <p><%= trip.title %></p>
-          <p><%= trip.description %></p>
-          <a href="/trips/<%= trip.id %>">Show</a>
-
-          <a href="/users/<%= trip.createdBy.id %>"><p>Created by: <%= trip.createdBy.username %> </p></a>
-        </div>
-      </div>
-    <% }) %>
-  </div>
-</div>
+  <% if (locals.isAuthenticated) { %>
+    <div class="mapIndex" id="map" data-lat="51.51363018240385" data-lng="-0.11161208152770996" data-trips="<%= JSON.stringify(trips) %>"></div>
+  <% } else { %>
+    <div class="home">
+      <h1><a href="/login">Log in</a> to view the thrills and spills</h1>
+    </div>
+  <% } %>

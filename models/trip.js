@@ -16,8 +16,8 @@ commentSchema.methods.belongsTo = function commentbelongsTo(user) {
 
 // trip reporting model
 const tripSchema = new mongoose.Schema({
-  latitude: {type: String, required: true},
-  longitude: {type: String, required: true},
+  latitude: {type: Number, required: true},
+  longitude: {type: Number, required: true},
   title: {type: String, required: true},
   image: {type: String},
   fallType: {type: String, required: true },

@@ -1,3 +1,39 @@
+@import 'bootstrap/bootstrap';
+
+h1{
+  text-align: center;
+
+}
+
+.navbar {
+  margin-bottom: 0;
+  color: white;
+}
+.homescreen {
+  height: calc(100vh - 50px);
+  background-image: url('/assets/map-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.welcome{
+  background-color: white;
+  height: inherit;
+}
 body {
-  background-color: lightblue;
+  background-color: yellowGreen;
+}
+
+.mapIndex {
+  height: calc(100vh - 50px);
+  background-color: grey;
+
+}
+.infowindow {
+  text-align: center;
+}
+.mapEdit {
+  width: 500px;
+  height: 600px;
+  background-color: grey;
+
 }
