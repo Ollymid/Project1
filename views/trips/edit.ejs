@@ -12,6 +12,10 @@
       <h3>Edit Your Trip details</h3>
       <form method="POST" action="/trips/<%= trip.id %>">
       <input type="hidden" name="_method" value="PUT">
+      <div class="form-group">
+        <p> So you have recovered from the concussion and you now remember things a little differently? Do not worry, we got you fam! You alter the co-ordinates by dropping a marker on the map, or you can edit the gritty details in the form below.</p>
+
+      </div>
         <div class="form-group">
           <label for="latitude">Latitude</label>
           <input type="text" class="form-control" id="latitude" name="latitude" value="<%= trip.latitude %>" readonly >

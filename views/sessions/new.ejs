@@ -1,21 +1,23 @@
 
-<div class="container">
-  <h1 class="title">Login</h1>
-</div>
+<section class="homescreen">
 
-<div class="container">
+  <div class="container welcome">
+    <div class="row">
+      <div class="col-sm-8 welcomeMsg">
+        <h1 class="title">Login</h1>
+        <form method="POST" action="/login">
+          <div class="field">
+            <label class="label" for="email">Email</label>
+            <input class="input" type="text" name="email" id="email" required>
+          </div>
+          <div class="field">
+            <label class="label" for="password">Password</label>
+            <input class="input" type="password" name="password" id="password" required>
+          </div>
 
-
-  <form method="POST" action="/login">
-    <div class="field">
-      <label class="label" for="email">Email</label>
-      <input class="input" type="text" name="email" id="email" required>
+          <button class="button">Login</button>
+        </form>
+      </div>
     </div>
-    <div class="field">
-      <label class="label" for="password">Password</label>
-      <input class="input" type="password" name="password" id="password" required>
-    </div>
-
-    <button class="button">Login</button>
-  </form>
-</div>
+  </div>
+</section>

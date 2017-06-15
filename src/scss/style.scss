@@ -7,19 +7,26 @@
 
 /* Style the links inside the navigation bar */
 .topnav a {
+    height: 50px;
     float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
+    font-family: 'Bungee Shade', cursive;
     &.logout {
       background-color: red;
     }
     &.login {
       background-color: green;
     }
+}
+
+a.navbar-brand {
+  padding: 0;
+  padding-left: 10px
 }
 
 /* Change the color of links on hover */
@@ -36,12 +43,18 @@
 
 h1 {
   text-align: center;
+  font-size: 60px;
+  font-family: 'Slackey', cursive;
+  color: #F433AB;
 }
 
 img {
   height: 300px;
   width: 300px;
-  margin-top: 30px
+  margin-top: 30px;
+  &#gif1 {
+    width: 500px;
+  }
 }
 .img {
   background-image: url('http://lolsnaps.com/upload_pic/RandomGravityCheck-995.jpg');
@@ -112,4 +125,22 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+@media only screen and (max-width: 575px ){
+
+  h1 {
+    font-size: 40px;
+  }
+  img#gif1 {
+    margin-top: 0;
+    width: 300px;
+    height: 210px;
+  }
+  .topnav a {
+    padding: 0;
+    padding-top: 5px;
+    padding-right: 1px;
+    font-size: 12px;
+  }
 }
