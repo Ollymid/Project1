@@ -1,32 +1,31 @@
 <div >
   <h1> Profile Edit</h1>
 
-  <form method="POST" action="/users/<%= user.id %>">
-    <div class="field">
-      <label class="label" for="firstName">First Name</label>
-      <p class="control">
-        <input class="input" type="text" name="firstName" id="firstName" value="<%= user.firstName %>">
-      </p>
-    </div>
-    <div class="field">
-      <label class="label" for="lastName">Last Name</label>
-      <p class="control">
-        <input class="input" type="text" name="lastName" id="lastName" value="<%= user.lastName %>">
-      </p>
-    </div>
-    <div class="field">
-      <label class="label" for="username">Username</label>
-      <p class="control">
-        <input class="input" type="text" name="username" id="username" value="<%= user.username %>">
-      </p>
-    </div>
-    <div class="field">
-      <label class="label" for="email">Email</label>
-      <p class="control">
-        <input class="input" type="email" name="email" id="email" value="<%= user.email %>">
-      </p>
-    </div>
-    <button class="button">Update</button>
-  </form>
+
   <hr/>
 </div>
+<section class="homescreen">
+
+  <div class="container welcome">
+    <div class="row">
+      <div class="col-sm-8 welcomeMsg">
+        <form method="POST" action="/users/<%= user.id %>">
+          <h1>EDIT PROFILE</h1>
+          <div class="field">
+            <label class="label" for="username">Username</label>
+            <p class="control">
+              <input class="input" type="text" name="username" id="username" value="<%= user.username %>">
+            </p>
+          </div>
+          <div class="field">
+            <label class="label" for="email">Email</label>
+            <p class="control">
+              <input class="input" type="email" name="email" id="email" value="<%= user.email %>">
+            </p>
+          </div>
+          <button class="button">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

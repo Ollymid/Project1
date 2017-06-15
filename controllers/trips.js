@@ -9,8 +9,13 @@ function indexTrip(req, res, next) {
    .catch(next);
 }
 
-function newTrip(req, res) {
-  return res.render('trips/new');
+function newTrip(req, res, next) {
+  console.log('REQ BODY', req.body);
+  Trip
+   .find()
+   .exec()
+   .then((trips)  => res.render('trips/new', { trips }))
+   .catch(next);
 }
 
 function createTrip(req, res, next) {
@@ -22,7 +27,7 @@ function createTrip(req, res, next) {
     .create(req.body)
     .then(() => res.redirect('/trips'))
     .catch((err) => {
-      if(err.name === 'ValidationError') return res.badRequest(`/trips/${req.params.id}/edit`, err.toString());
+      if(err.name === 'ValidationError') return res.badRequest(`/trips/new`, err.toString());
       next(err);
     });
 }
@@ -63,7 +68,7 @@ function updateTrip(req, res, next) {
       }
       return trip.save();
     })
-    .then(() => res.redirect(`/trips/${req.params.id}`))
+    .then(() => res.redirect(`/trips`))
     .catch((err) => {
       if(err.name === 'ValidationError') return res.badRequest(`/trips/${req.params.id}/edit`, err.toString());
       next(err);

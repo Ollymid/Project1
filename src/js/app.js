@@ -2,10 +2,10 @@
 
 $(() => {
 
-
-  // const apiKey = 'AIzaSyAlVUTsuZbPUjXa84b4LRW7tjX4c_ZjfXI';
   const $map = $('#map');
+
   let infowindow = null;
+  let marker = null;
   let map = null;
   const $latBox = $('#latitude');
   const $longBox = $('#longitude');
@@ -19,6 +19,7 @@ $(() => {
 
     getTrips();
 
+
   }
   initMap();
 
@@ -30,6 +31,7 @@ $(() => {
       addMarker(trip);
     });
   }
+
 
   function addMarker(trip) {
 
@@ -59,15 +61,24 @@ $(() => {
 
     infowindow.open(map, marker);
   }
-  //
+
   map.addListener('click', function (e) {
     //lat and lng is available in e object
-    var clickLocation = e.latLng.toJSON();
-    console.log(clickLocation.lat);
-    console.log(clickLocation.lng);
+    if(marker) {
+      marker.setPosition(e.latLng);
+    } else {
 
-    $latBox.val(clickLocation.lat);
-    $longBox.val(clickLocation.lng);
+      marker = new google.maps.Marker({
+        position: e.latLng,
+        map: map
+      });
+
+    }
+    marker.setMap(map);
+
+    $latBox.val(e.latLng.lat());
+    $longBox.val(e.latLng.lng());
+
   });
 
 

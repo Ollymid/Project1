@@ -1,55 +1,62 @@
-<div >
-  <h1 >Show Post</h1>
-  <div>
 
-        <p><em><%= trip.title %></em></p>
+<section class="homescreen">
+
+  <div class="container welcome">
+    <div class="row">
+      <div class="col-sm-8 show">
+        <h1 ><%= trip.title %></h1>
+        <p><strong>Latitude:</strong><%= trip.latitude %></p>
+        <p><strong>Longitude:</strong><%= trip.longitude %></p>
+        <p><strong>Type of Fall:</strong><%= trip.fallType %></p>
+        <p><strong>Description:</strong><%= trip.description %></p>
+
         <div class="block">
           <p>Created by: <%= trip.createdBy.username %> </p>
           <div class="button-bar">
-          <% if(locals.isAuthenticated && trip.belongsTo(currentUser)) { %>
+            <% if(locals.isAuthenticated && trip.belongsTo(currentUser)) { %>
               <a class="button is-primary" href="/trips/<%= trip.id %>/edit">Edit</a>
               <form class="alongside" method="POST" action="/trips/<%= trip.id %>">
-                <input type="hidden" name="_method" value="DELETE">
-                <button>Delete</button>
+              <input type="hidden" name="_method" value="DELETE">
+              <button>Delete</button>
               </form>
-            </div>
-          <% } %>
-
-        </div>
-
-    <% if(locals.isAuthenticated) { %>
-      <section >
-          <form method="POST" action="/trips/<%= trip.id %>/comments">
-            <div >
-                <div class="field">
-                  <label class="label" for="content">Comment</label>
-                  <p class="control">
-                      <textarea class="textarea" name="content" id="content" placeholder="Textarea"></textarea>
-                  </p>
-                  </div>
-                  <button>Post</button>
-            </div>
-          </form>
-      </section>
-    <% } %>
-    <section>
-       <h4>Comments</h4>
-       <% trip.comments.forEach((comment) => { %>
-         <div>
-              <p>
-                <a href="/profile"><%= comment.createdBy.username %></a>
-                <%= comment.content %>
-              </p>
-
-                  <% if(locals.isAuthenticated && comment.belongsTo(currentUser)) { %>
-                    <form method="POST" action="/trips/<%= trip.id %>/comments/<%= comment.id %>">
-                     <input type="hidden" name="_method" value="DELETE">
-                    <button></button>
+              </div>
+              <% } %>
+              <% if(locals.isAuthenticated) { %>
+                <section >
+                    <form method="POST" action="/trips/<%= trip.id %>/comments">
+                      <div >
+                          <div class="field">
+                            <label class="label" for="content">Comment</label>
+                            <p class="control">
+                                <textarea class="textarea" name="content" id="content" placeholder="Textarea"></textarea>
+                            </p>
+                            </div>
+                            <button>Post</button>
+                      </div>
                     </form>
-                 <% } %>
-         </div>
-       <% }) %>
-     </section>
+                </section>
+              <% } %>
+              <section>
+                 <h4>Comments</h4>
+                 <% trip.comments.forEach((comment) => { %>
+                   <div>
+                        <p>
+                          <a href="/profile"><%= comment.createdBy.username %></a>
+                          <%= comment.content %>
+                        </p>
 
-  </div>
-</div>
+                            <% if(locals.isAuthenticated && comment.belongsTo(currentUser)) { %>
+                              <form method="POST" action="/trips/<%= trip.id %>/comments/<%= comment.id %>">
+                               <input type="hidden" name="_method" value="DELETE">
+                              <button>X</button>
+                              </form>
+                           <% } %>
+                   </div>
+                 <% }) %>
+               </section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

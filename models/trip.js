@@ -19,7 +19,6 @@ const tripSchema = new mongoose.Schema({
   latitude: {type: Number, required: true},
   longitude: {type: Number, required: true},
   title: {type: String, required: true},
-  image: {type: String},
   fallType: {type: String, required: true },
   description: {type: String},
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
