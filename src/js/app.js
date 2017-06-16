@@ -14,7 +14,8 @@ $(() => {
     map = new google.maps.Map($map.get(0), {
       zoom: 14,
       scrollwheel: false,
-      center: { lat: $map.data('lat'), lng: $map.data('lng') }
+      center: { lat: $map.data('lat'), lng: $map.data('lng') },
+      styles: mapStyles
     });
 
     getTrips();
