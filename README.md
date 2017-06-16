@@ -32,7 +32,8 @@ You should add a list of the software and languages used in the project, for exm
 
 #### Challenges faced
 
-Pardon the pun but my major stumbling blocks was accessing the data from the user model in the dom without puting server-side.js into the client-side.js. I successfully managed that in the end with the use of data attribute tags. I also battled an old foe which is webpage styling. Whilst in some respects I found it easier using bootstrap to style my app, I also found it difficult to position and center things on the page, which often left me frustrated and dejected. 
+Pardon the pun but one of my major stumbling blocks was accessing the data from the user model in the dom without puting server-side.js into the client-side.js. I successfully managed that in the end with the use of data attribute tags. 
+I also battled an old foe which is webpage styling. Whilst in some respects I found it easier using bootstrap to style my app, I also found it difficult to position and center things on the page, which often left me frustrated and dejected. 
 The express app part I found easier to deal with. 
 
 
