@@ -2,7 +2,7 @@
 
 #### Installation and setup
 
-For the optimal installation of this game, you should first do the following:
+For the optimal installation of this app, you should first do the following:
 
 - Download or clone the repo
 - `npm i` to install dependencies
