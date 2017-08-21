@@ -24,7 +24,7 @@
 	<a href="https://intense-earth-32358.herokuapp.com/">
     <img src="http://i.imgur.com/RuaY919.png">
   </a>
-	<figcaption>
+   <figcaption>
       Users can select any location they like and then click it to record details of their mishap
   </figcaption>
 </figure>
@@ -59,7 +59,7 @@ The list of the software and languages used in the project, for example:
 
 ### Challenges faced
 
-A personal challenge for me was using Jquery to access the data from the trips model in the DOM to plot markers without using server-side.js in the front end . I successfully overcame this in the end with the use of data attribute tags on my maps. 
+A personal challenge for me was using Jquery to access the data from the trips model in the DOM to plot markers without using server-side.js in the front end. I successfully overcame this in the end with the use of data attribute tags on my maps. 
 
 I struggled with the CSS styling. Whilst in some respects I found it easier using bootstrap, I also found it difficult to position and center things on the page, which often left me frustrated. 
 The Node.js and express app back end part I found easier to deal with. 
